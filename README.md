@@ -7,9 +7,9 @@ int main(void)
   lsubprocess_t sp;
   char *output;
 
-  /* Create a "bash" subprocess, and handle the use of stdin (true) */
+  /* Create a "bash" subprocess, and tell the library that we'll handle stdin ourself */
   lsubprocess_create(&sp, "bash", true);
-  /* As stdin is handled by this program, we need to send some bytes to bash ourself */
+  /* As stdin is handled by our program, we need to send the command lines to bash ourself */
   lsubprocess_bufferize_stdin(&sp, "ls -C -l --color=yes\nexit\n", 26);
   /* The above command just filled a buffer, we now need to send this whole buffer to the subprocess */
   lsubprocess_update_stdin(&sp);
