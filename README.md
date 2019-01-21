@@ -1,6 +1,15 @@
 # C-subprocess
 A tiny subprocess library
 
+This project works using `lstr`, `lgtab` and `lbuffer` libraries:
+-
+
+- [`lstr`] https://github.com/LeandreBl/C-string
+
+- [`lgtab`] https://github.com/LeandreBl/C-dynamic-arrays
+
+- [`lbuffer`] https://github.com/LeandreBl/C-string
+
 ```C
 int main(void)
 {
