@@ -82,7 +82,7 @@ static int fork_and_execve(lsubprocess_t *subprocess)
   if ((subprocess->use_stdin == true && dup2(subprocess->fdin[0], 0) == -1)
       || dup2(subprocess->fdout[1], 1) == -1 || dup2(subprocess->fderr[1], 2) == -1) {
     fprintf(stderr, "Failed to execute subprocess: dup2(): %s.\n", strerror(errno));
-    return (-1);
+    exit(EXIT_FAILURE);
   }
   if (subprocess->use_stdin == true)
     close(subprocess->fdin[1]);
